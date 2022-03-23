@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/account.css')}}">
+    <title>Account</title>
+</head>
+<body>
+    <header>
+        <div class="blackout"></div>
+        <a href="/">
+            <div class="header-logo">
+                <svg fill="none" height="27" viewbox="0 0 80 27" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                        d="M79.75 21.8116H71.9193L66.3642 17.0549L60.829 21.7917H54.2106L51.0472 17.9492H40.1424L42.9017 14.5407H48.2647L44.1804 9.54544L29.9201 26.9062H23.305L27.4324 21.8646H20.5391L16.8125 11.417L13.1157 21.7851H6.12306L0.25 5.51081H5.61625L9.56475 16.5944L13.5 5.5605H20.125L24.0503 16.5712L27.9723 5.55719H33.3551L27.4324 21.8646L28.7507 20.2548L40.848 5.53069H47.5061L57.5728 17.8134L62.4157 13.6496L47.0887 0.40625H54.9559L79.75 21.8116ZM71.9822 11.9669L68.2887 8.80013L71.9756 5.65988L79.4287 5.6665L71.9822 11.9669Z"
+                        fill="white" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+        </a>
+        <div class="menu-icon">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="nav_wrapper">
+            <nav>
+                <div class="nav_item" data-schema="">ALL</div>
+                <div class="nav_item" data-schema="gameplay">GAMEPLAY</div>
+                <div class="nav_item" data-schema="cosmetics">COSMETICS</div>
+                <div class="nav_item" data-schema="production">PRODUCTION</div>
+                <div class="nav_item" data-schema="misc">MISC</div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="nfts-wrapper">
+    </div>
+
+    <div class="arrow-up"><img alt="Arrow"
+        src="{{ url_for('static', filename='/content/footer/arrow_up.svg')}}" /></div>
+    <script crossorigin="anonymous"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='/js/flowtype.js')}}"></script>
+    <script src="{{ url_for('static', filename='/js/account.js')}}"></script>
+</body>
+</html>

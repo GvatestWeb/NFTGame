@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900"
+        rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/bignoodletitling" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='/css/style.css')}}" rel="stylesheet" />
+    <title>Popit Game</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="blackout"></div>
+        <header>
+            <div class="header-logo">
+                <svg fill="none" height="27" viewbox="0 0 80 27" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                        d="M79.75 21.8116H71.9193L66.3642 17.0549L60.829 21.7917H54.2106L51.0472 17.9492H40.1424L42.9017 14.5407H48.2647L44.1804 9.54544L29.9201 26.9062H23.305L27.4324 21.8646H20.5391L16.8125 11.417L13.1157 21.7851H6.12306L0.25 5.51081H5.61625L9.56475 16.5944L13.5 5.5605H20.125L24.0503 16.5712L27.9723 5.55719H33.3551L27.4324 21.8646L28.7507 20.2548L40.848 5.53069H47.5061L57.5728 17.8134L62.4157 13.6496L47.0887 0.40625H54.9559L79.75 21.8116ZM71.9822 11.9669L68.2887 8.80013L71.9756 5.65988L79.4287 5.6665L71.9822 11.9669Z"
+                        fill="white" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <div class="menu-icon">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="nav_wrapper">
+                <nav>
+                    <div class="nav_item" id="roadmap">ROADMAP</div>
+                    <div class="nav_item" id="nfts">NFTS</div>
+                    <a href="#">
+                        <div class="nav_item">DOCS</div>
+                    </a>
+                    <div class="nav_item" id="whitelist">WHITELIST</div>
+                    <div class="nav_item" id="bounty">BOUNTY</div>
+                    <div class="nav_item" id="devs">DEV TEAM</div>
+                    <div class="nav_item" id="contacts">CONTACTS</div>
+                </nav>
+            </div>
+            <div class="header-logo login">
+                <svg fill="none" height="27" viewbox="0 0 80 27" width="55" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                        d="M79.75 21.8116H71.9193L66.3642 17.0549L60.829 21.7917H54.2106L51.0472 17.9492H40.1424L42.9017 14.5407H48.2647L44.1804 9.54544L29.9201 26.9062H23.305L27.4324 21.8646H20.5391L16.8125 11.417L13.1157 21.7851H6.12306L0.25 5.51081H5.61625L9.56475 16.5944L13.5 5.5605H20.125L24.0503 16.5712L27.9723 5.55719H33.3551L27.4324 21.8646L28.7507 20.2548L40.848 5.53069H47.5061L57.5728 17.8134L62.4157 13.6496L47.0887 0.40625H54.9559L79.75 21.8116ZM71.9822 11.9669L68.2887 8.80013L71.9756 5.65988L79.4287 5.6665L71.9822 11.9669Z"
+                        fill="white" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+        </header>
+        <main>
+            <section class="intro">
+                <div class="intro-title">
+                    <h1>On the other hand, the existing theory is a completely new step in the model</h1>
+                </div>
+                <div class="island">
+                    <img alt="island" class="island_img"
+                        src="{{ url_for('static', filename='/content/island/island.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle1"
+                        src="{{ url_for('static', filename='/content/island/popIt1.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle2"
+                        src="{{ url_for('static', filename='/content/island/popIt2.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle3"
+                        src="{{ url_for('static', filename='/content/island/popIt3.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle4"
+                        src="{{ url_for('static', filename='/content/island/popIt4.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle5"
+                        src="{{ url_for('static', filename='/content/island/popIt5.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle6"
+                        src="{{ url_for('static', filename='/content/island/Spinner1.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle7"
+                        src="{{ url_for('static', filename='/content/island/Spinner2.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle8"
+                        src="{{ url_for('static', filename='/content/island/Spinner3.webp')}}" />
+                    <img alt="popit" class="island_particle" id="particle9"
+                        src="{{ url_for('static', filename='/content/island/Spinner4.webp')}}" />
+                </div>
+            </section>
+            <div class="sections_wrapper">
+                <section class="roadmap">
+                    <div class="section_title">Roadmap</div>
+                    <div class="roadmap-wrapper">
+                        <div class="roadmap-item">
+                            <h3 class="roadmap-item_title">01 2022</h3>
+                            <div class="wrapper_glass">
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item">
+                            <h3 class="roadmap-item_title">01 2022</h3>
+                            <div class="wrapper_glass">
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item">
+                            <h3 class="roadmap-item_title">01 2022</h3>
+                            <div class="wrapper_glass">
+                                <div class="roadmap_point">Gentlemen, socio-economic development is ыan interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                            </div>
+                        </div>
+                        <div class="roadmap-item">
+                            <h3 class="roadmap-item_title">01 2022</h3>
+                            <div class="wrapper_glass">
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                                <div class="roadmap_point">Gentlemen, socio-economic development is an interesting
+                                    activity.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="" class="roadmap_cubes"
+                        src="{{ url_for('static', filename='/content/roadmap/Cubes.webp')}}" />
+                    <div class="roadmap_orange"></div>
+                    <div class="roadmap_purple"></div>
+                    <div class="roadmap_green"></div>
+                </section>
+                <section class="nfts">
+                    <div class="section_title">NFTS</div>
+                    <div class="nfts_wrapper">
+                        <div class="nft_wrapper">
+                            <canvas class="nft nft_first"></canvas>
+                        </div>
+                        <div class="nft_wrapper">
+                            <canvas class="nft nft_second"></canvas>
+                        </div>
+                        <div class="nft_wrapper">
+                            <canvas class="nft nft_third"></canvas>
+                        </div>
+                        <div class="nft_wrapper">
+                            <canvas class="nft nft_fourth"></canvas>
+                        </div>
+                    </div>
+                    <img alt="" class="nfts_cubes" src="{{ url_for('static', filename='/content/nfts/cubes.webp')}}" />
+                </section>
+                <section class="whitelist">
+                    <div class="section_title">Whitelist</div>
+                    <div class="whitelist-wrapper">
+                        <div class="dispenser">
+                            <video autoplay="" loop="" muted="" no-controls="" playsinline="" preload="auto">
+                                <source src="./content/whitelist/renderDispenser.webm" type="video/webm" />
+                            </video>
+                        </div>
+                        <form action="" class="whitelist-form">
+                            <div class="form_title">Whitelist</div>
+                            <label for="wax-address">Wax Address</label>
+                            <input class="wax-address req" id="wax-address" type="text" />
+                            <label for="telegram">Telegram</label>
+                            <input class="telegram req" id="telegram" type="text" />
+                            <label for="twitter">Twitter</label>
+                            <input class="twitter" id="twitter" type="text" />
+                            <label for="email">Email</label>
+                            <input class="email" id="email" type="text" />
+                            <button class="whitelist-button" type="submit">Send</button>
+                        </form>
+                    </div>
+                </section>
+                <section class="bounty">
+                    <div class="section_title">Bounty</div>
+                    <div class="rowgap_wrapper">
+                        <div class="section_text-content">
+                            Our NFT rewards for different community and creaative activities. What to get one? Join our
+                            social media for more information
+                        </div>
+                        <div class="cards-container">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                    <div class="back">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                    <div class="back">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="front">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                    <div class="back">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-container card_phone-only">
+                                <div class="card">
+                                    <div class="front">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                    <div class="back">
+                                        <img src="{{ url_for('static', filename='/content/awards/popitpin 3.png')}}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section_text-content">This badge gives its owner an opportunity to become an early
+                            tester and grants some more privileges that will be revealed with time</div>
+                    </div>
+                </section>
+                <section class="devs">
+                    <div class="devs_smoke">
+                        <img alt="Pink Smoke" src="{{ url_for('static', filename='/content/devs/devsSmoke.webp')}}" />
+                    </div>
+                    <div class="section_title">DEVS</div>
+                    <div class="rowgap_wrapper">
+                        <div class="section_title_upper">We are a game studio with employes located all over the world.
+                        </div>
+                        <div class="devs_block">
+                            <div class="devs_member-wrapper">
+                                <div class="devs_member">
+                                    <img alt=""
+                                        src="{{ url_for('static', filename='/content/devs/VojtechHolub.webp')}}" />
+                                </div>
+                                <div class="devs_member">
+                                    <img alt=""
+                                        src="{{ url_for('static', filename='/content/devs/mikhailAnikiev.webp')}}" />
+                                </div>
+                            </div>
+                            <div class="section_text-content">Our team consists of gamers and blockchain enthusiasts.
+                                This is our first project and we are givving all our effort to make it good and
+                                enjoyable for all of you. This might take time but we hope that we will pass this road
+                                together with you all.</div>
+                        </div>
+                        <div class="devs_block">
+                            <div class="section_text-content">Our team consists of gamers and blockchain enthusiasts.
+                                This is our first project and we are givving all our effort to make it good and
+                                enjoyable for all of you. This might take time but we hope that we will pass this road
+                                together with you all.</div>
+                            <div class="devs_member-wrapper">
+                                <div class="devs_member">
+                                    <img alt=""
+                                        src="{{ url_for('static', filename='/content/devs/MatyasProchazka.webp')}}" />
+                                </div>
+                                <div class="devs_member">
+                                    <img alt=""
+                                        src="{{ url_for('static', filename='/content/devs/MarekSmekal.webp')}}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="contacts">
+                    <div class="section_title">Contacts</div>
+                    <div class="contacts-wrapper">
+                        <div class="quarters"><img alt=""
+                                src="{{ url_for('static', filename='/content//contacts/quarters.webp')}}" /></div>
+                        <div class="contacts-content">
+                            <div class="section_title_upper lite">Our mission is to make blockchain games easier to play
+                                for the people who never encountered blockhain. Thats why we decided to work on WAX and
+                                BSC.</div>
+                            <div class="contacts-content_social">
+                                <div class="contacts_icon"><img alt="Telegram"
+                                        src="{{ url_for('static', filename='/content/icons/telegram.svg')}}" /></div>
+                                <div class="contacts_icon"><img alt=""
+                                        src="{{ url_for('static', filename='/content/icons/telegram.svg')}}" /></div>
+                                <div class="contacts_icon"><img alt=""
+                                        src="{{ url_for('static', filename='/content/icons/telegram.svg')}}" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="Smoke" class="contacts_smoke"
+                        src="{{ url_for('static', filename='/content/contacts/contactsSmoke.webp')}}" />
+                </section>
+                <footer>
+                    <div class="our">
+                        <img alt="NFTLogo" class="our-logo"
+                            src="{{ url_for('static', filename='/content/footer/nftLogo.png')}}" />
+                        <div class="section_title_upper lite">Our mission is to make blockchain games</div>
+                    </div>
+                    <div class="nav-footer">
+                        <div class="nav-part_one">
+                            <div class="nav_item footer" id="roadmap">ROADMAP</div>
+                            <div class="nav_item footer" id="nfts">NFTS</div>
+                            <a href="#">
+                                <div class="nav_item footer" style="text-decoration: underline;">DOCS</div>
+                            </a>
+                            <div class="nav_item footer" id="whitelist">WHITELIST</div>
+                        </div>
+                        <div class="nav-part_two">
+                            <div class="nav_item footer" id="bounty">BOUNTY</div>
+                            <div class="nav_item footer" id="devs">DEV TEAM</div>
+                            <div class="nav_item footer" id="contacts">CONTACTS</div>
+                        </div>
+                    </div>
+                    <div class="arrow-up"><img alt="Arrow"
+                            src="{{ url_for('static', filename='/content/footer/arrow_up.svg')}}" /></div>
+                    <div class="partners">
+                        <img alt="Binance" src="{{ url_for('static', filename='/content/footer/binance.svg')}}" />
+                        <img alt="WAX" src="{{ url_for('static', filename='/content/footer/WAX.svg')}}" />
+                    </div>
+                </footer>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+    <script crossorigin="anonymous"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='/js/flowtype.js')}}"></script>
+    <script src="{{ url_for('static', filename='/js/wax.js')}}"></script>
+    <script src="{{ url_for('static', filename='/js/script.js')}}"></script>
+    <script crossorigin="anonymous"
+        integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://threejs.org/examples/js/shaders/CopyShader.js"></script>
+    <script src="https://threejs.org/examples/js/shaders/FXAAShader.js"></script>
+    <script src="https://threejs.org/examples/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="https://threejs.org/examples/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="{{ url_for('static', filename='/js/model_displaing.js')}}"></script>
+</body>
+
+</html>

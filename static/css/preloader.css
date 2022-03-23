@@ -1,0 +1,19 @@
+.preloader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1em;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2D0740;
+    z-index: 10000000;
+    transition: top 0.3s linear;
+  }
+  
+  .preloader.scrolled {
+    top: -100vh;
+  }

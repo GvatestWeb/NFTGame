@@ -1,0 +1,196 @@
+@import url("zeroing.css");
+@import url("button.css");
+@import url("burger.css");
+
+body {
+    background-color: #1F0D35;
+    font-family: 'BigNoodleTitling', sans-serif;
+}
+
+/* Header */
+header {
+    font-family: 'BigNoodleTitling', sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.blackout {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: -100vh;
+    background: #000;
+    opacity: .5;
+    backdrop-filter: blur(25px);  
+    z-index: 999;
+    transition: all 0.3s linear;
+}
+
+.blackout.active {
+    top: 0;
+    left: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 0 0 1em;
+}
+  
+.nav_wrapper {
+    flex-grow: 1;
+}
+  
+.nav_item {
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #A23CB3;
+    box-shadow: inset 0px 0px 13px #FFFFFF;
+}
+
+.header-logo svg {
+    width: 1.5em;
+}
+
+.lazy {
+    height: 400px;
+}
+
+/* NFTS */
+.nfts-wrapper {
+    padding: 1.5em;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2em;
+    column-gap: 2em;
+}
+
+/* .nft-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    column-gap: 2em;
+    padding: 0 1.5em;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.nft-row::after {
+    content: "";
+    position: absolute;
+    bottom: -1em;
+    transform: translateY(50%);
+    width: 100vw;
+    height: 20px;
+    background-image: url("../content/account/shelf.png");
+} */
+
+.nft {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 1em;
+    background: #150824;
+    box-shadow: 0 -3px 20px #fff;
+}
+
+.nft img {
+    width: 100%;
+    display: none;
+}
+
+.nft svg {
+    width: 4em;
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 870px) {
+
+    .intro {
+      padding: 8em 4em 0em 4em;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .header-logo {
+        display: flex;
+        position: fixed;
+        top: 0.3em;
+        left: 0.3em;
+        width: 75px;
+        height: 75px;
+        z-index: 1000;
+    }
+
+    .header-logo svg {
+        width: 60px;
+    }
+  
+    .menu-icon {
+      font-size: 2em;
+      display: block;
+      z-index: 10000;
+    }
+  
+    .nav_wrapper {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 2.5em;
+      padding-top: 1em;
+      width: 100%;
+      z-index: 101;
+      padding: 0;
+      margin-top: 10vh;
+    }
+
+    .nfts-wrapper {
+        padding-top: 8em;
+    }
+  
+    .nav_item {
+      font-size: 3em;
+    }
+
+    .nft {
+        width: 40%;
+    }
+}
