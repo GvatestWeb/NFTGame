@@ -12,6 +12,3 @@ def home():
 def account():
     userName = request.args.get("name")
     return render_template("account.html", name=userName)
-
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
