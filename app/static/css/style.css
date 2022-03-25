@@ -8,6 +8,11 @@
   src: url("/static/fonts/Minecraft.ttf")
  }
 
+@font-face {
+font-family: "BigNoodleTitling";
+src: url("/static/fonts/BigNoodleTitling.woff")
+}
+
 body {
   background: linear-gradient(180deg, #FF5289 0%, #2D0740 42.57%, #310000 77.08%, #000000 92.75%);
   color: #FFFFFF;
