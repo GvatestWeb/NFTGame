@@ -9,8 +9,8 @@
  }
 
 @font-face {
-font-family: "BigNoodleTitling";
-src: url("/static/fonts/BigNoodleTitling.woff")
+  font-family: "BigNoodleTitling";
+  src: url("/static/fonts/bigNoodleTitling.woff")
 }
 
 body {
