@@ -135,6 +135,7 @@ let observer = new IntersectionObserver(function (entries) {
         } else {
             if (flag <= 1) {
                 render()
+                render()
                 setTimeout(() => {
                     cancelAnimationFrame(card_render)
                 }, 200)

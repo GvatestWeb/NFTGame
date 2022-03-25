@@ -24,10 +24,25 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.5em 0.8em 0.5em 0.5em;
 }
 
+
 .header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 13px #FFFFFF;
+}
+
+.header-logo img {
+  width: 90%;
+}
+
+.header-login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,20 +51,45 @@ header {
   border-radius: 50%;
   background-color: #A23CB3;
   box-shadow: inset 0px 0px 13px #FFFFFF;
+  cursor: pointer;
 }
 
-.header-logo svg {
+.header-login svg {
   width: 1.5em;
 }
 
-.header-logo.login {
-  cursor: pointer;
-}
-
 .account-name {
+  position: relative;
   font-size: 0.8em;
   cursor: pointer;
   color: #fff;
+}
+
+.account-name::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -0.5em;
+  display: block;
+  border-radius: 28px;
+  background: linear-gradient(152.97deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(72px);
+  border-radius: 52px;
+  height: 1.5em;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  z-index: -1;
+  width: 125%;
+}
+
+.account-name:hover:before {
+  width: 1.2em;
+  background: linear-gradient(152.97deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.9;
+}
+
+.account-name:active:before {
+  top: 10px;
 }
 
 nav {
@@ -148,7 +188,7 @@ h1 {
     font-size: 2em;
   }
 
-  .login {
+  .header-login {
     display: flex;
     position: fixed;
     top: 0.3em;
@@ -161,12 +201,12 @@ h1 {
   .account-name {
     font-size: 2em;
     position: fixed;
-    top: 0.5em;
-    left: 0.5em;
+    top: 1em;
+    left: 1em;
     z-index: 10000;
   }
 
-  .login svg {
+  .header-login svg {
     width: 60px;
   }
 
@@ -510,8 +550,8 @@ h1 {
 
   .dispenser video {
     width: 130vw;
-    top: 0em;
-    left: -12em;
+    top: 0.2em;
+    left: -11em;
   }
 }
 

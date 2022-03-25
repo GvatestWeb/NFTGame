@@ -13,13 +13,9 @@
 <body>
     <header>
         <div class="blackout"></div>
-        <a href="/">
+        <a href="/home">
             <div class="header-logo">
-                <svg fill="none" height="27" viewbox="0 0 80 27" width="55" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd"
-                        d="M79.75 21.8116H71.9193L66.3642 17.0549L60.829 21.7917H54.2106L51.0472 17.9492H40.1424L42.9017 14.5407H48.2647L44.1804 9.54544L29.9201 26.9062H23.305L27.4324 21.8646H20.5391L16.8125 11.417L13.1157 21.7851H6.12306L0.25 5.51081H5.61625L9.56475 16.5944L13.5 5.5605H20.125L24.0503 16.5712L27.9723 5.55719H33.3551L27.4324 21.8646L28.7507 20.2548L40.848 5.53069H47.5061L57.5728 17.8134L62.4157 13.6496L47.0887 0.40625H54.9559L79.75 21.8116ZM71.9822 11.9669L68.2887 8.80013L71.9756 5.65988L79.4287 5.6665L71.9822 11.9669Z"
-                        fill="white" fill-rule="evenodd"></path>
-                </svg>
+                <img src="{{ url_for('static', filename='/content/header/popitgamelogo.webp')}}" alt="">
             </div>
         </a>
         <div class="menu-icon">
@@ -33,7 +29,7 @@
             <div class="dot"></div>
             <div class="dot"></div>
         </div>
-        <div class="nav_wrapper">
+        <!-- <div class="nav_wrapper">
             <nav>
                 <div class="nav_item" data-schema="">ALL</div>
                 <div class="nav_item" data-schema="gameplay">GAMEPLAY</div>
@@ -41,10 +37,32 @@
                 <div class="nav_item" data-schema="production">PRODUCTION</div>
                 <div class="nav_item" data-schema="misc">MISC</div>
             </nav>
+        </div> -->
+        <div class="nav_wrapper">
+            <nav>
+                <div class="nav_item" id="roadmap">ROADMAP</div>
+                <div class="nav_item" id="nfts">NFTS</div>
+                <a href="#">
+                    <div class="nav_item">DOCS</div>
+                </a>
+                <div class="nav_item" id="whitelist">WHITELIST</div>
+                <div class="nav_item" id="bounty">BOUNTY</div>
+                <div class="nav_item" id="devs">DEV TEAM</div>
+                <div class="nav_item" id="contacts">CONTACTS</div>
+            </nav>
         </div>
     </header>
-
-    <div class="nfts-wrapper">
+    <div class="content-wrapper">
+        <div class="nfts-filters">
+            <div class="filters-wrapper">
+                <div class="filter_item active" data-schema="">All</div>
+                <div class="filter_item" data-schema="gameplay">Gameplay</div>
+                <div class="filter_item" data-schema="cosmetics">Cosmetics</div>
+                <div class="filter_item" data-schema="production">Production</div>
+                <div class="filter_item" data-schema="misc">Misc</div>
+            </div>
+        </div>
+        <div class="nfts-wrapper"></div>
     </div>
 
     <div class="arrow-up"><img alt="Arrow"

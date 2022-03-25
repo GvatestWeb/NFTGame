@@ -39,16 +39,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
-    padding: 0 0 0 1em;
+    padding: 0 1em;
 }
   
-.nav_wrapper {
+  .nav_wrapper {
     flex-grow: 1;
 }
   
-.nav_item {
+  .nav_item {
     color: #fff;
-    font-size: 1.1em;
+    font-size: 0.8em;
     cursor: pointer;
 }
 
@@ -59,28 +59,78 @@ nav {
     width: 2em;
     height: 2em;
     border-radius: 50%;
-    background-color: #A23CB3;
     box-shadow: inset 0px 0px 13px #FFFFFF;
 }
-
-.header-logo svg {
-    width: 1.5em;
+  
+.header-logo img {
+    width: 90%;
 }
 
 .lazy {
     height: 400px;
 }
 
+/* Content */
+.content-wrapper {
+    display: grid;
+    grid-template-areas: "filters nfts";
+    grid-template-columns: 0.2fr 1fr;
+    margin-bottom: 1em;
+}
+
+/* Filters */
+.nfts-filters {
+    grid-area: filters;
+    position: relative;
+    font-size: 0.8em;
+}
+
+.filters-wrapper {
+    position: fixed;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 0.5em;
+    color: #fff
+}
+
+.filter_item {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    text-align: left;
+    font-size: 1em;
+    width: 5em;
+    padding-left: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.15s linear;
+}
+
+.filter_item:hover {
+    opacity: 1;
+    padding-left: 0.8em;
+}
+
+.filter_item.active {
+    opacity: 1;
+    padding-left: 0.8em;
+}
+
 /* NFTS */
 .nfts-wrapper {
-    padding: 1.5em;
-    width: 100vw;
+    grid-area: nfts ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    row-gap: 2em;
-    column-gap: 2em;
+    row-gap: 1.5em;
+    column-gap: 1.5em;
 }
 
 /* .nft-row {
@@ -125,11 +175,25 @@ nav {
     width: 4em;
 }
 
+.nft_stand {
+    width: ;
+}
+
 .arrow-up {
     position: fixed;
     bottom: 0.5em;
     right: 0.5em;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+    padding: 0.5em;
+    width: 2em;
+    box-shadow: inset 0px 0px 13px #ffffff;
+}
+
+.arrow-up img {
+    width: 100%;
 }
 
 @media (max-width: 870px) {
@@ -145,8 +209,8 @@ nav {
     .header-logo {
         display: flex;
         position: fixed;
-        top: 0.3em;
-        left: 0.3em;
+        top: 0.5em;
+        left: 0.5em;
         width: 75px;
         height: 75px;
         z-index: 1000;
@@ -170,6 +234,45 @@ nav {
       width: 100%;
       z-index: 1000;
     }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 3em;
+        margin-top: 7em;
+    }
+
+    .nfts-filters {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filters-wrapper {
+        position: relative;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .filter_item {
+        font-size: 2.5em;
+        width: 100%;
+        text-align: center;
+    }
+
+    .filter_item:hover {
+        padding-left: 0.5em;
+    }
+
+    .filter_item.active {
+        opacity: 1;
+        padding-left: 0.5em;
+    }
   
     nav {
       display: flex;
@@ -183,7 +286,7 @@ nav {
     }
 
     .nfts-wrapper {
-        padding-top: 8em;
+
     }
   
     .nav_item {

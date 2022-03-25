@@ -1,7 +1,7 @@
 window.onload = function() {
     setTimeout(() => {
         document.querySelector(".preloader").classList.add("scrolled")
-    }, 2000);
+    }, 100)
 }
  
  $(() => {
@@ -61,6 +61,15 @@ window.onload = function() {
         }, 1000)
     });
 
+    let url_string = window.location.href,
+        url = new URL(url_string),
+        section = url.searchParams.get("section")
+        if (section != null) {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("." + section).offset().top
+            }, 0)
+        }
+
     // Wax Login
     let loggedIn = false
 
@@ -75,7 +84,7 @@ window.onload = function() {
 
     isAutoLoginAvailable = autologin().then((message) => {
         if (message) {
-            $(".login").remove()
+            $(".header-login").remove()
             $("header").append(`<a href="account"><div class="account-name">${wax.userAccount}</div></a>`)
         }
     })
@@ -94,8 +103,9 @@ window.onload = function() {
     $(".login").on("click", () => {
         if (!loggedIn) {
             wax.login().then(() => {
-                $(".login").remove()
+                $(".header-login").remove()
                 $("header").append(`<a href="account?name=${wax.userAccount}"><div class="account-name">${wax.userAccount}</div></a>`)
+                window.location = window.location + `/account?name=${wax.userAccount}`
             })
         }
     })
