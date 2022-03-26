@@ -87,7 +87,6 @@ $(() => {
                             let imageObserver = new IntersectionObserver(function(entries) {
                                 entries.forEach(function(entry) {
                                 if (entry.isIntersecting) {
-                                    console.log(entry.target.children[0].children[0])
                                     let image = entry.target.children[0].children[0]
                                     image.src = image.dataset.src
                                     entry.target.classList.remove("lazy")

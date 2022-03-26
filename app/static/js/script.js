@@ -71,8 +71,6 @@ window.onload = function() {
         }
 
     // Wax Login
-    let loggedIn = false
-
     const wax = new waxjs.WaxJS({
         rpcEndpoint: 'https://wax.greymass.com',
     });
@@ -88,26 +86,16 @@ window.onload = function() {
             $("header").append(`<a href="account"><div class="account-name">${wax.userAccount}</div></a>`)
         }
     })
-    
 
-    // async function login() {
-    //     try {
-    //         const userAccount = await wax.login();
-    //         userName = wax.userAccount
-    //         // await getCurrentMessage();
-    //     } catch (error) {
-    //         console.log(error.message);
-    //     }
-    // }
-
-    $(".login").on("click", () => {
-        if (!loggedIn) {
-            wax.login().then(() => {
-                $(".header-login").remove()
-                $("header").append(`<a href="account?name=${wax.userAccount}"><div class="account-name">${wax.userAccount}</div></a>`)
-                window.location = window.location + `/account?name=${wax.userAccount}`
-            })
-        }
+    $(".header-login").on("click", () => {
+        wax.login().then(() => {
+            $(".header-login").remove()
+            $("header").append(`<a href="account?name=${wax.userAccount}"><div class="account-name">${wax.userAccount}</div></a>`)
+            window.location = window.location + `/account?name=${wax.userAccount}`
+        })
     })
+
+
+    // Name Clicked
 
  })
