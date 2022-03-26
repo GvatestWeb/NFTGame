@@ -1,3 +1,4 @@
+
 window.onload = function() {
     setTimeout(() => {
         document.querySelector(".preloader").classList.add("scrolled")
@@ -94,8 +95,5 @@ window.onload = function() {
             window.location = window.location + `/account?name=${wax.userAccount}`
         })
     })
-
-
-    // Name Clicked
 
  })

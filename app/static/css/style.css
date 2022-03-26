@@ -163,6 +163,7 @@ h1 {
   .menu-icon {
     font-size: 2em;
     display: block;
+    z-index: 10000;
   }
 
   .nav_wrapper {
@@ -182,6 +183,7 @@ h1 {
     width: 100%;
     z-index: 101;
     padding: 0;
+    margin-top: 10vh;
   }
 
   .nav_item {

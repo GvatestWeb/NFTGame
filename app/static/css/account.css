@@ -162,6 +162,7 @@ nav {
 
 .nft {
     width: 23%;
+    height: 7.65em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,6 +175,11 @@ nav {
 .nft img {
     width: 100%;
     display: none;
+}
+
+.nft video {
+    width: 100%;
+    border-radius: 0.5em;
 }
 
 .nft svg {

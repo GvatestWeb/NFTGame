@@ -33,7 +33,6 @@ function makeScene(card, selector) {
     scene.add(light1)
 
     let glbModel = ""
-    let model // ?
     const loader = new THREE.GLTFLoader();
     loader.load( `/static/js/models/${card}`, function ( glb ) {
         glbModel = glb.scene
@@ -80,10 +79,7 @@ function makeScene(card, selector) {
     function render() {
         renderer.autoClear = false;
         renderer.clear();
-        //   camera.layers.set(1);
         composer.render();
-        //   renderer.clearDepth();
-        //   camera.layers.set(0);
     }
     return render
 }
@@ -95,52 +91,26 @@ if (window.innerWidth <= 1000) {
     var fourth_card = makeScene("card_first.glb", ".nft_fourth")
 }
 
-// Render
-$(".nfts_wrapper").mousedown(() => {
-    card_render = requestAnimationFrame(render)
-})
-
-$(".nfts_wrapper").mouseup(() => {
-    cancelAnimationFrame(card_render)
-})
-
-
-$(".nfts_wrapper").on("touchstart", function(){
-    card_render = requestAnimationFrame(render)
-})
-
-$(".nfts_wrapper").on("touchend", function() {
-    cancelAnimationFrame(card_render)
+controlses.forEach((control) => {
+    control.addEventListener( 'change', render );
 })
 
 function render() {
     first_card()
     second_card()
     third_card()
-    controlses.forEach((control) => {
-        control.update()
-    })
     if (window.innerWidth <= 1000) {
         fourth_card()
     }
-    card_render = requestAnimationFrame(render)
 }
 
-// Observer\
-flag = 0
+// Observer
 let observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (!entry.isIntersecting) {
             cancelAnimationFrame(card_render)
         } else {
-            if (flag <= 1) {
-                render()
-                render()
-                setTimeout(() => {
-                    cancelAnimationFrame(card_render)
-                }, 200)
-                flag ++
-            }
+            render()
         }
     })
 })
