@@ -1,9 +1,8 @@
-
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
         document.querySelector(".preloader").classList.add("scrolled")
     }, 100)
-}
+});
  
  $(() => {
     $('body').flowtype({
