@@ -136,33 +136,12 @@ nav {
     align-items: center;
     row-gap: 1.5em;
     column-gap: 1.5em;
+    min-width: 100%;
 }
-
-/* .nft-row {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    column-gap: 2em;
-    padding: 0 1.5em;
-    margin-bottom: 2em;
-    position: relative;
-}
-
-.nft-row::after {
-    content: "";
-    position: absolute;
-    bottom: -1em;
-    transform: translateY(50%);
-    width: 100vw;
-    height: 20px;
-    background-image: url("../content/account/shelf.png");
-} */
 
 .nft {
     width: 23%;
-    height: 7.65em;
+    /* height: 7.65em; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,6 +154,7 @@ nav {
 .nft img {
     width: 100%;
     display: none;
+    border-radius: 0.5em;
 }
 
 .nft video {
@@ -298,6 +278,10 @@ nav {
 
     .nft {
         width: 40%;
-        height: 16.45em;
+        /* height: 16.45em; */
+    }
+
+    .arrow-up {
+        width: 4em;
     }
 }

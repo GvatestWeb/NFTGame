@@ -65,7 +65,7 @@ $(() => {
                     image.onload = function() {
                         if (entry.target.children[0].children[1]) {
                             entry.target.children[0].children[1].remove()
-                            image.style.display = "initial"
+                            image.style.display = "block"
                         }
                     }
                 } else {
@@ -85,10 +85,10 @@ $(() => {
     }
 
 
-    function pushNft(template, data, interval) {
+    function pushNft(template, data, interval, schemaName) {
             setTimeout(() => {
                 templateID = template["template_id"]
-                fetch(`https://wax.api.atomicassets.io/atomicassets/v1/templates/ntoons.funko/${templateID}`).then(response => response.json())
+                fetch(`https://wax.api.atomicassets.io/atomicassets/v1/templates/popitgameccg/${templateID}`).then(response => response.json())
             .then(templateData => {
                 schemaName = templateData["data"]["schema"]["schema_name"]
                 if (!schema || schemaName == schema) {
@@ -128,7 +128,7 @@ $(() => {
                         $(".nfts-wrapper").append(htmlData.join(" "))
                         makeObserver()
                     }
-                } else if (htmlData.length == dataLength - sorter) {
+                } else {
                     $(".nfts-wrapper").empty()
                     $(".nfts-wrapper").append("<h2 style='color: #fff; font-size: 3em;'>No NFTs Found</h2>")
                 }
@@ -142,13 +142,13 @@ $(() => {
         $(".nfts-wrapper").empty()
         $(".nfts-wrapper").append('<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#e15b64" stroke="none" style="animation-play-state: running; animation-delay: 0s;"><animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 51;360 50 51" style="animation-play-state: running; animation-delay: 0s;"></animateTransform></path></svg>')
         // https://wax.api.atomicassets.io/atomicassets/v1/accounts/${userName}/popitgameccg
-        fetch(`https://wax.api.atomicassets.io/atomicassets/v1/accounts/hzhvu.wam/ntoons.funko`)
+        fetch(`https://wax.api.atomicassets.io/atomicassets/v1/accounts/${userName}/popitgameccg`)
         .then(response => response.json())
         .then(data => {
             interval = 100
             data["data"]["templates"].forEach((template) => {
                 if (interval <= 3000) {
-                    pushNft(template, data, interval)
+                    pushNft(template, data, interval, schema)
                     interval += 100
                 }       
             })
@@ -156,7 +156,7 @@ $(() => {
     }
     
 
-    getNfts(schema="series1.drop")
+    getNfts(schema="")
     $(".filter_item").click((elem) => {
         schemaName = elem.target.dataset.schema
         getNfts(schema=schemaName)

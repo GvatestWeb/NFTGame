@@ -1,4 +1,3 @@
-controlses = []
 function makeScene(card, selector) {
     var scene = new THREE.Scene()
     var camera = new THREE.PerspectiveCamera(60, 25/45, 0.1, 10000)
@@ -14,6 +13,7 @@ function makeScene(card, selector) {
         renderer.setSize(250, 450)
     }
     renderer.setPixelRatio( window.devicePixelRatio )
+
     var controls = new THREE.OrbitControls(camera, renderer.domElement)
     controls.enableZoom = false
     controls.maxPolarAngle = Math.PI / 2
@@ -21,7 +21,6 @@ function makeScene(card, selector) {
     controls.rotateSpeed = 0.5
     // controls.enableDamping = true
     // controls.dampingFactor = 0.05
-    controlses.push(controls)
     const hemilight1 = new THREE.HemisphereLight(0xffeeb1, 0x080820, 0.4)
     hemilight1.position.set(0, 0, 1)
     scene.add(hemilight1)
@@ -50,7 +49,6 @@ function makeScene(card, selector) {
             }
         })
         scene.add( glb.scene )
-        model = glb.scene // ?
     });
 
     /** COMPOSER */
@@ -75,12 +73,12 @@ function makeScene(card, selector) {
     renderer.gammaInput = true
     renderer.gammaOutput = true
     renderer.toneMappingExposure = Math.pow( 0.9, 4.0 )
-    renderer.render(scene, camera)
     function render() {
         renderer.autoClear = false;
         renderer.clear();
         composer.render();
     }
+    controls.addEventListener( 'change', render );
     return render
 }
 card_render = requestAnimationFrame(render)
@@ -90,10 +88,6 @@ let third_card = makeScene("card_first.glb", ".nft_third")
 if (window.innerWidth <= 1000) {
     var fourth_card = makeScene("card_first.glb", ".nft_fourth")
 }
-
-controlses.forEach((control) => {
-    control.addEventListener( 'change', render );
-})
 
 function render() {
     first_card()

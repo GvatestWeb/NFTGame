@@ -84,7 +84,7 @@ window.onload = function() {
     isAutoLoginAvailable = autologin().then((message) => {
         if (message) {
             $(".header-login").remove()
-            $("header").append(`<a href="account"><div class="account-name">${wax.userAccount}</div></a>`)
+            $("header").append(`<a href="account?name=${wax.userAccount}"><div class="account-name">${wax.userAccount}</div></a>`)
         }
     })
 
