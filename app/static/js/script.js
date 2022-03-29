@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
-        document.querySelector(".preloader").classList.add("scrolled")
-    }, 100)
+        document.querySelector(".preloader").classList.add("faded")
+        setTimeout(() => {
+            document.querySelector(".preloader").style.display = "none"
+        }, 300)
+    }, 200)
+
 });
  
  $(() => {
@@ -11,6 +15,27 @@ document.addEventListener("DOMContentLoaded", function() {
         minFont   : 10,
         maxFont   : 50,
         fontRatio : 30
+    });
+
+    // Form Submit
+    $(document).on('submit','.whitelist-form', function(e) {
+      e.preventDefault();
+      $(".form_status").addClass("active")
+      $(".whitelist_button").attr('disabled', 'true');
+      $.ajax({
+        type: 'POST',
+        url: '/',
+        data: {
+            wax: $("#wax-address").val(),
+            telegram: $("#telegram").val(),
+            twitter: $("#twitter").val(),
+            email: $("#email").val(),
+
+        },
+        error: () => {
+            alert("Server Error")
+        }
+      })
     });
 
     // Burger

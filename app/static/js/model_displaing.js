@@ -81,13 +81,16 @@ function makeScene(card, selector) {
     controls.addEventListener( 'change', render );
     return render
 }
-card_render = requestAnimationFrame(render)
-let first_card = makeScene("card_first.glb", ".nft_first")
-let second_card = makeScene("card_first.glb", ".nft_second")
-let third_card = makeScene("card_first.glb", ".nft_third")
+
+let first_card = makeScene("card_first.glb", ".nft_first"),
+    second_card = makeScene("card_first.glb", ".nft_second"),
+    third_card = makeScene("card_first.glb", ".nft_third")
 if (window.innerWidth <= 1000) {
     var fourth_card = makeScene("card_first.glb", ".nft_fourth")
 }
+
+let card_render = requestAnimationFrame(render)
+
 
 function render() {
     first_card()
@@ -104,7 +107,7 @@ let observer = new IntersectionObserver(function (entries) {
         if (!entry.isIntersecting) {
             cancelAnimationFrame(card_render)
         } else {
-            render()
+            card_render = requestAnimationFrame(render)
         }
     })
 })

@@ -7,9 +7,9 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='/content/header/popitgamelogo.webp')}}">
-    <link href="{{ url_for('static', filename='/css/preloader.css')}}" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
     <link href="{{ url_for('static', filename='/css/style.css')}}" rel="stylesheet" />
+    <link rel="preconnect" href="https://wax.api.atomicassets.io/">
     <title>Popit Game</title>
 </head>
 
@@ -45,7 +45,7 @@
                     </a>
                     <div class="nav_item" id="whitelist">WHITELIST</div>
                     <div class="nav_item" id="bounty">BOUNTY</div>
-                    <div class="nav_item" id="devs">DEV TEAM</div>
+                    <div class="nav_item" id="devs"><nobr>DEV TEAM</nobr></div>
                     <div class="nav_item" id="contacts">CONTACTS</div>
                 </nav>
             </div>
@@ -167,16 +167,18 @@
                             </video>
                         </div>
                         <form action="" class="whitelist-form">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                             <div class="form_title">Whitelist</div>
                             <label for="wax-address">Wax Address</label>
-                            <input class="wax-address req" id="wax-address" type="text" />
+                            <input class="wax-address" required id="wax-address" type="text" />
                             <label for="telegram">Telegram</label>
-                            <input class="telegram req" id="telegram" type="text" />
+                            <input class="telegram" required id="telegram" type="text" />
                             <label for="twitter">Twitter</label>
                             <input class="twitter" id="twitter" type="text" />
                             <label for="email">Email</label>
-                            <input class="email" id="email" type="text" />
-                            <button class="whitelist-button" type="submit">Send</button>
+                            <input class="email" id="email" type="email" />
+                            <button class="whitelist_button" type="submit">Send</button>
+                            <div class="form_status">You will be whitelisted soon</div>
                         </form>
                     </div>
                 </section>
@@ -332,12 +334,20 @@
     <script crossorigin="anonymous"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        let csrf_token = "{{ csrf_token() }}";
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrf_token);
+                }
+            }
+        });
+    </script>
     <script src="{{ url_for('static', filename='/js/flowtype.js')}}"></script>
     <script src="{{ url_for('static', filename='/js/waxjs.js')}}"></script>
     <script src="{{ url_for('static', filename='/js/script.js')}}"></script>
-    <script crossorigin="anonymous"
-        integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://threejs.org/examples/js/postprocessing/EffectComposer.js"></script>
     <script src="https://threejs.org/examples/js/postprocessing/RenderPass.js"></script>
@@ -347,7 +357,6 @@
     <script src="https://threejs.org/examples/js/shaders/LuminosityHighPassShader.js"></script>
     <script src="https://threejs.org/examples/js/postprocessing/UnrealBloomPass.js"></script>
     <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
-    <script src="{{ url_for('static', filename='/js/model_displaing.js')}}"></script>
+    <script class="model_displaing" src="{{ url_for('static', filename='/js/model_displaing.js')}}"></script>
 </body>
-
 </html>

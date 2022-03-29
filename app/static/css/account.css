@@ -1,11 +1,230 @@
-@import url("zeroing.css");
-@import url("button.css");
-@import url("burger.css");
-
 @font-face {
     font-family: "BigNoodleTitling";
     src: url("/static/fonts/bigNoodleTitling.woff")
 }
+
+.nav_item {
+    position: relative;
+    padding: 0 20px 0;
+    transition: all 0.2s ease;
+  }
+  .nav_item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(72px);
+    border-radius: 52px;
+    width: 1.2em;
+    height: 1.2em;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    z-index: -1;
+  }
+  .nav_item::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: block;
+    border-radius: 28px;
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 52px;
+    width: 1.2em;
+    height: 1.2em;
+    transition: all 0.3s ease;
+    z-index: -1;
+    opacity: 0.6;
+  }
+  .nav_item span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  
+  .nav_item:hover:before {
+    width: 100%;
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.9;
+  }
+  
+  .nav_item:hover:after {
+    width: 100%;
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.9;
+  }
+  .nav_item:active:before {
+      top: 10px;
+  }
+  
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.menu-icon {
+    display: none;
+    position: fixed;
+    top: 0.5em;
+    right: 0.5em;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+.menu-icon .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: margin 0.4s ease 0.4s, width 0.4s ease;
+    -moz-transition: margin 0.4s ease 0.4s, width 0.4s ease;
+    -o-transition: margin 0.4s ease 0.4s, width 0.4s ease;
+    transition: margin 0.4s ease 0.4s, width 0.4s ease;
+}
+.menu-icon .dot:nth-of-type(1) {
+    margin-top: -20px;
+    margin-left: -20px;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    -moz-transform: translate(-50%, -50%) rotate(45deg);
+    -ms-transform: translate(-50%, -50%) rotate(45deg);
+    -o-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu-icon .dot:nth-of-type(2) {
+    margin-top: -20px;
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -moz-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    -o-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.menu-icon .dot:nth-of-type(3) {
+    margin-top: -20px;
+    margin-left: 20px;
+}
+.menu-icon .dot:nth-of-type(4) {
+    margin-left: -20px;
+}
+.menu-icon .dot:nth-of-type(6) {
+    margin-left: 20px;
+}
+.menu-icon .dot:nth-of-type(7) {
+    margin-top: 20px;
+    margin-left: -20px;
+}
+.menu-icon .dot:nth-of-type(8) {
+    margin-top: 20px;
+}
+.menu-icon .dot:nth-of-type(9) {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.menu-icon.clicked .dot {
+    -webkit-transition: margin 0.4s ease, width 0.4s ease 0.4s;
+    -moz-transition: margin 0.4s ease, width 0.4s ease 0.4s;
+    -o-transition: margin 0.4s ease, width 0.4s ease 0.4s;
+    transition: margin 0.4s ease, width 0.4s ease 0.4s;
+    margin-left: 0;
+    margin-top: 0;
+}
+.menu-icon.clicked .dot:nth-of-type(1) {
+    width: 50px;
+}
+.menu-icon.clicked .dot:nth-of-type(2) {
+    width: 50px;
+}
+
 
 body {
     background-color: #1F0D35;
@@ -65,7 +284,12 @@ nav {
     height: 2em;
     border-radius: 50%;
     box-shadow: inset 0px 0px 13px #FFFFFF;
+    transition: box-shadow 0.15s linear;
 }
+  
+a .header-logo:hover {
+    box-shadow: inset 0px 0px 25px #ffffff;
+  }
   
 .header-logo img {
     width: 90%;
@@ -149,6 +373,11 @@ nav {
     border-radius: 1em;
     background: #150824;
     box-shadow: 0 -3px 20px #fff;
+    transition: box-shadow 0.15s linear;
+}
+
+.nft:hover {
+    box-shadow: 0 -3px 13px #fff;
 }
 
 .nft img {
@@ -177,6 +406,11 @@ nav {
     padding: 0.5em;
     width: 2em;
     box-shadow: inset 0px 0px 13px #ffffff;
+    transition: box-shadow 0.15s linear;
+}
+
+.arrow-up:hover {
+    box-shadow: inset 0px 0px 25px #ffffff;
 }
 
 .arrow-up img {
