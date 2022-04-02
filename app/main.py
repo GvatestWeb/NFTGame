@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 from .yadisk_scripts import write_file, upload_file
+import requests
+import time
 
 
 # App Init
@@ -27,6 +29,13 @@ def home():
 @app.route("/account")
 def account():
     userName = request.args.get("name")
+    if request.args.get("get_nfts"):
+        resp = requests.get(f"https://wax.api.atomicassets.io/atomicassets/v1/accounts/{userName}/popitgameccg").json()
+        print("ajax")
+        return {'ok': "ok"}
+        # return render_template("account.html", name=userName, templates=resp["data"]["templates"])
+    # for template in resp["data"]["templates"]:
+    #     print(template)
     return render_template("account.html", name=userName)
 
 

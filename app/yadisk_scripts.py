@@ -28,7 +28,7 @@ def upload_file(uploadfile:str, savefile:str, replace:bool=True):
             requests.put(res['href'], files={'file':f})
         except KeyError as ex:
             with open("log.txt", "a") as f:
-                f.write(f"can't upload file {datetime.datetime.now().date()}\n")
+                f.write(f"can't upload file {datetime.datetime.now()}\n")
 
 def write_file(path:str, data:list, sheet_name:str):
     """

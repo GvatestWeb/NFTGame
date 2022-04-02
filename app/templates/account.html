@@ -13,11 +13,9 @@
 <body>
     <header>
         <div class="blackout"></div>
-        <a href="/">
-            <div class="header-logo">
-                <img src="{{ url_for('static', filename='/content/header/popitgamelogo.webp')}}" alt="">
-            </div>
-        </a>
+        <div class="header-logo">
+            <img src="{{ url_for('static', filename='/content/header/popitgamelogo.webp')}}" alt="">
+        </div>
         <div class="menu-icon">
             <div class="dot"></div>
             <div class="dot"></div>
@@ -34,7 +32,7 @@
                 <div class="nav_item" id="roadmap">ROADMAP</div>
                 <div class="nav_item" id="nfts">NFTS</div>
                 <a href="#">
-                    <div class="nav_item">DOCS</div>
+                    <div class="nav_item" id="docs">DOCS</div>
                 </a>
                 <div class="nav_item" id="whitelist">WHITELIST</div>
                 <div class="nav_item" id="bounty">BOUNTY</div>
