@@ -10,7 +10,7 @@ $(() => {
     resp = $.ajax({
         type: 'GET',
         url: '/account',
-        data: {get_nfts: "smth"},
+        data: {schema_name: ""},
         error: () => {
             alert("Server Error")
         },

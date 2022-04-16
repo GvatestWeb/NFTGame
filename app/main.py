@@ -29,13 +29,10 @@ def home():
 @app.route("/account")
 def account():
     userName = request.args.get("name")
-    if request.args.get("get_nfts"):
+    schema_name = request.args.get("schema_name")
+    if schema_name:
         resp = requests.get(f"https://wax.api.atomicassets.io/atomicassets/v1/accounts/{userName}/popitgameccg").json()
-        print("ajax")
-        return {'ok': "ok"}
-        # return render_template("account.html", name=userName, templates=resp["data"]["templates"])
-    # for template in resp["data"]["templates"]:
-    #     print(template)
+        return render_template("account.html", name=userName, templates=resp["data"]["templates"])
     return render_template("account.html", name=userName)
 
 
